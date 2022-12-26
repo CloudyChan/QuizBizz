@@ -163,6 +163,19 @@ function showResult(){
         let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
+
+    const url = window.location.href; // Gets current URL
+
+    const obj = {
+        score: userScore
+    };
+
+    const searchParams = new URLSearchParams(obj);
+    console.log(searchParams);
+
+    const queryString = searchParams.toString();
+    console.log(queryString);
+    window.location.href = url + queryString;
 }
 
 function startTimer(time){
